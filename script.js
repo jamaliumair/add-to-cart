@@ -86,7 +86,8 @@ cartContainer.innerHTML += `
 
 
 let cart = {};
-
+let totalItems;
+let totalPrice;
 function addToCartinObj(index) {
     const { id } = products[index];
 
@@ -103,8 +104,8 @@ function addToCartinObj(index) {
     // let allkey = Object.keys(cart);
 
  
-    let totalItems = 0;
-    let totalPrice = 0;
+    totalItems = 0;
+    totalPrice = 0;
       for (let key in cart) {
             totalPrice += cart[key].totalPrice;
             totalItems += cart[key].qty;
@@ -116,6 +117,20 @@ function addToCartinObj(index) {
         <h2>Cart:</h2>
         <h2>Total Items: ${totalItems}</h2>
         <h2>Total Price: $${totalPrice}</h2>
+        <button onclick="clearCart()" class="clear-btn">Clear Cart</button>
     `
 
+}
+
+function clearCart() {
+    for (let key in cart) {
+        cart[key].totalPrice = 0;
+        cart[key].qty = 0;
+  }
+totalPrice = 0;
+totalItems = 0;
+cartContainer.innerHTML = `
+        <h2>Total Items: ${totalItems}</h2>
+        <h2>Total Price: $${totalPrice}.00</h2>`
+console.log(totalItems)
 }

@@ -97,6 +97,19 @@ footer {
     cursor: pointer;
 }
 
+
+.clear-btn {
+    background-color: #007bff;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    border-radius: 5px; 
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 .cart-div {
     width: 90%;
     margin: 0 auto;
